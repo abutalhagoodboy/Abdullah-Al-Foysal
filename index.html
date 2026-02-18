@@ -9,7 +9,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&family=Cinzel:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    (function() {
+        emailjs.init("mT8KR6pDmHESvTKSQ");
+    })();
+</script>
     <style>
         :root {
             --primary: #0a0a0a;
@@ -18,7 +23,6 @@
             --text: #fafafa;
             --muted: #737373;
         }
-
 
         /* Base Styles */
         * { box-sizing: border-box; }
@@ -435,8 +439,19 @@
             z-index: 100;
         }
 
-        /* Hidden Sections */
-        .hidden-section { display: none !important; }
+        /* CRITICAL FIX: Ensure sections are visible by default */
+        section {
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        /* CRITICAL FIX: Content visibility for experience and publications */
+        .experience-card, .pub-item {
+            opacity: 1 !important;
+            transform: none !important;
+            display: block !important;
+        }
 
         /* Cursor */
         .cursor-glow {
@@ -760,7 +775,7 @@
                 <div class="relative">
                     <div class="relative w-full aspect-[3/4] max-w-md mx-auto group">
                         <div class="absolute inset-0 bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-3xl rotate-6 opacity-20 group-hover:rotate-12 transition-transform duration-700"></div>
-                        <img src="/mnt/kimi/upload/WhatsApp Image 2025-10-16 at 11.37.51_e437ce91.jpg" alt="Abdullah Al Foysal" class="relative w-full h-full object-cover rounded-3xl grayscale group-hover:grayscale-0 transition-all duration-700 shadow-2xl hover-lift" id="profileImage">
+                        <img src="https://6992dca2681c79fa0bce6dd9.imgix.net/file/Abdillah%20Al%20Foysal.jpeg" alt="Abdullah Al Foysal" class="relative w-full h-full object-cover rounded-3xl grayscale group-hover:grayscale-0 transition-all duration-700 shadow-2xl hover-lift" id="profileImage">
                     </div>
                 </div>
             </div>
@@ -932,14 +947,14 @@
             </div>
         </section>
 
-        <!-- Experience -->
-        <section id="experience" class="py-32">
+        <!-- Experience - FIXED WITH EXPLICIT VISIBILITY -->
+        <section id="experience" class="py-32" style="opacity: 1; visibility: visible; display: block;">
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="font-display text-4xl md:text-5xl font-bold mb-16 text-center">Work Experience</h2>
                 
-                <div class="space-y-8" id="experienceGrid">
+                <div class="space-y-8" id="experienceGrid" style="opacity: 1; visibility: visible;">
                     <!-- Casa Paganini -->
-                    <div class="glass rounded-3xl p-8 hover-lift">
+                    <div class="experience-card glass rounded-3xl p-8 hover-lift" style="opacity: 1; transform: none;">
                         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
                             <div>
                                 <h3 class="text-2xl font-bold">University Research Assistant</h3>
@@ -963,7 +978,7 @@
                     </div>
 
                     <!-- Istituto di Psicopatologia -->
-                    <div class="glass rounded-3xl p-8 hover-lift">
+                    <div class="experience-card glass rounded-3xl p-8 hover-lift" style="opacity: 1; transform: none;">
                         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
                             <div>
                                 <h3 class="text-2xl font-bold">Educational Researcher - ML Engineer</h3>
@@ -987,7 +1002,7 @@
                     </div>
 
                     <!-- MSNYDesigns -->
-                    <div class="glass rounded-3xl p-8 hover-lift">
+                    <div class="experience-card glass rounded-3xl p-8 hover-lift" style="opacity: 1; transform: none;">
                         <div class="mb-6">
                             <h3 class="text-2xl font-bold">Data Scientist</h3>
                             <p class="text-pink-400 font-medium"><i class="fas fa-hospital mr-2"></i>MSNYDesigns.srl</p>
@@ -1003,8 +1018,8 @@
             </div>
         </section>
 
-        <!-- Publications -->
-        <section id="publications" class="py-32 bg-secondary/30">
+        <!-- Publications - FIXED WITH EXPLICIT VISIBILITY -->
+        <section id="publications" class="py-32 bg-secondary/30" style="opacity: 1; visibility: visible; display: block;">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
                     <div>
@@ -1019,9 +1034,9 @@
                     </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="publicationsGrid">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="publicationsGrid" style="opacity: 1; visibility: visible;">
                     <!-- 2025 -->
-                    <article class="pub-item glass p-6 rounded-2xl hover-lift cursor-pointer group" data-year="2025" onclick="botAction('pneumonia')">
+                    <article class="pub-item glass p-6 rounded-2xl hover-lift cursor-pointer group" data-year="2025" onclick="botAction('pneumonia')" style="opacity: 1; transform: none; display: block;">
                         <div class="flex justify-between items-start mb-4">
                             <span class="text-xs font-medium px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">2025</span>
                             <i class="fas fa-external-link-alt text-gray-600 group-hover:text-indigo-400 transition-colors"></i>
@@ -1035,7 +1050,7 @@
                         </div>
                     </article>
 
-                    <article class="pub-item glass p-6 rounded-2xl hover-lift cursor-pointer group" data-year="2025" onclick="botAction('icu-delirium')">
+                    <article class="pub-item glass p-6 rounded-2xl hover-lift cursor-pointer group" data-year="2025" onclick="botAction('icu-delirium')" style="opacity: 1; transform: none; display: block;">
                         <div class="flex justify-between items-start mb-4">
                             <span class="text-xs font-medium px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">2025</span>
                             <i class="fas fa-external-link-alt text-gray-600 group-hover:text-indigo-400 transition-colors"></i>
@@ -1049,7 +1064,7 @@
                         </div>
                     </article>
 
-                    <article class="pub-item glass p-6 rounded-2xl hover-lift cursor-pointer group" data-year="2025" onclick="botAction('antidepressants')">
+                    <article class="pub-item glass p-6 rounded-2xl hover-lift cursor-pointer group" data-year="2025" onclick="botAction('antidepressants')" style="opacity: 1; transform: none; display: block;">
                         <div class="flex justify-between items-start mb-4">
                             <span class="text-xs font-medium px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">2025</span>
                         </div>
@@ -1059,7 +1074,7 @@
                     </article>
 
                     <!-- 2024 -->
-                    <article class="pub-item glass p-6 rounded-2xl hover-lift cursor-pointer group" data-year="2024">
+                    <article class="pub-item glass p-6 rounded-2xl hover-lift cursor-pointer group" data-year="2024" style="opacity: 1; transform: none; display: block;">
                         <div class="flex justify-between items-start mb-4">
                             <span class="text-xs font-medium px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">2024</span>
                         </div>
@@ -1068,7 +1083,7 @@
                         <p class="text-xs text-gray-500">Disease and Health Research Vol. 8</p>
                     </article>
 
-                    <article class="pub-item glass p-6 rounded-2xl hover-lift cursor-pointer group" data-year="2024">
+                    <article class="pub-item glass p-6 rounded-2xl hover-lift cursor-pointer group" data-year="2024" style="opacity: 1; transform: none; display: block;">
                         <div class="flex justify-between items-start mb-4">
                             <span class="text-xs font-medium px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">2024</span>
                         </div>
@@ -1077,7 +1092,7 @@
                         <p class="text-xs text-gray-500">Advances in Bioscience and Biotechnology, 15</p>
                     </article>
 
-                    <article class="pub-item glass p-6 rounded-2xl hover-lift cursor-pointer group" data-year="2024">
+                    <article class="pub-item glass p-6 rounded-2xl hover-lift cursor-pointer group" data-year="2024" style="opacity: 1; transform: none; display: block;">
                         <div class="flex justify-between items-start mb-4">
                             <span class="text-xs font-medium px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">2024</span>
                         </div>
@@ -1087,7 +1102,7 @@
                     </article>
 
                     <!-- 2021 -->
-                    <article class="pub-item glass p-6 rounded-2xl hover-lift cursor-pointer group" data-year="2021">
+                    <article class="pub-item glass p-6 rounded-2xl hover-lift cursor-pointer group" data-year="2021" style="opacity: 1; transform: none; display: block;">
                         <div class="flex justify-between items-start mb-4">
                             <span class="text-xs font-medium px-3 py-1 rounded-full bg-pink-500/10 text-pink-400 border border-pink-500/20">2021</span>
                         </div>
@@ -1098,10 +1113,9 @@
                 </div>
 
                 <div class="mt-12 text-center">
-                    <button onclick="botAction('publications')" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/5 transition-all text-indigo-400 hover:text-indigo-300">
-                        View All 50+ Publications on Google Scholar
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
+                    <a href="https://scholar.google.com/citations?user=cQ_zolQAAAAJ&hl=en" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/5 transition-all text-indigo-400 hover:text-indigo-300">
+    View All 50+ Publications on Google Scholar
+    <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
@@ -1147,7 +1161,7 @@
                     <!-- Certificate 3 -->
                     <div class="cert-card glass rounded-xl overflow-hidden cert-item" data-category="professional" onclick="openLightbox('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800')">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" alt="Research Certificate">
-                        div class="cert-overlay">
+                        <div class="cert-overlay">
                             <div>
                                 <p class="text-white font-bold text-sm">AI in Healthcare Research</p>
                                 <p class="text-gray-300 text-xs">Istituto di Psicopatologia • 2024</p>
@@ -1292,103 +1306,92 @@
             </div>
         </section>
 
-        <!-- Collaboration Form -->
-        <section id="collaboration" class="py-32 relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/10 to-transparent"></div>
-            <div class="max-w-4xl mx-auto px-6 relative z-10">
-                <div class="text-center mb-12">
-                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Let's Collaborate</h2>
-                    <p class="text-gray-400">Interested in research collaboration, AI consulting, or academic partnerships? Send a proposal.</p>
-                </div>
+<!-- Collaboration Form -->
+<section id="collaboration" class="py-32 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/10 to-transparent"></div>
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-12">
+            <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Let's Collaborate</h2>
+            <p class="text-gray-400">Interested in research collaboration, AI consulting, or academic partnerships? Send a proposal.</p>
+        </div>
 
-                <div class="glass rounded-3xl p-8 md:p-12">
-                    <form id="collabForm" onsubmit="handleCollaboration(event)" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm text-gray-400 mb-2">Your Name *</label>
-                                <input type="text" name="name" required class="form-input" placeholder="Dr. Jane Smith">
-                            </div>
-                            <div>
-                                <label class="block text-sm text-gray-400 mb-2">Email *</label>
-                                <input type="email" name="email" required class="form-input" placeholder="jane@university.edu">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-sm text-gray-400 mb-2">Institution/Organization</label>
-                            <input type="text" name="organization" class="form-input" placeholder="University of Research">
-                        </div>
-
-                        <div>
-                            <label class="block text-sm text-gray-400 mb-2">Collaboration Type *</label>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                                <label class="flex items-center gap-2 p-3 rounded-lg bg-white/5 cursor-pointer hover:bg-white/10 transition-colors">
-                                    <input type="radio" name="type" value="research" class="accent-indigo-500" checked>
-                                    <span class="text-sm">Research</span>
-                                </label>
-                                <label class="flex items-center gap-2 p-3 rounded-lg bg-white/5 cursor-pointer hover:bg-white/10 transition-colors">
-                                    <input type="radio" name="type" value="consulting" class="accent-indigo-500">
-                                    <span class="text-sm">Consulting</span>
-                                </label>
-                                <label class="flex items-center gap-2 p-3 rounded-lg bg-white/5 cursor-pointer hover:bg-white/10 transition-colors">
-                                    <input type="radio" name="type" value="phd" class="accent-indigo-500">
-                                    <span class="text-sm">PhD Supervision</span>
-                                </label>
-                                <label class="flex items-center gap-2 p-3 rounded-lg bg-white/5 cursor-pointer hover:bg-white/10 transition-colors">
-                                    <input type="radio" name="type" value="other" class="accent-indigo-500">
-                                    <span class="text-sm">Other</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-sm text-gray-400 mb-2">Research Area of Interest</label>
-                            <select name="area" class="form-input">
-                                <option value="">Select an area...</option>
-                                <option value="neuropsychiatric">Neuropsychiatric AI</option>
-                                <option value="icu">ICU Delirium Prediction</option>
-                                <option value="imaging">Medical Imaging (CNN)</option>
-                                <option value="movement">Movement Analysis / EyesWeb</option>
-                                <option value="affective">Affective Computing</option>
-                                <option value="blockchain">Blockchain in Healthcare</option>
-                                <option value="other">Other (specify in message)</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block text-sm text-gray-400 mb-2">Your Proposal *</label>
-                            <textarea name="message" rows="5" required class="form-input resize-none" placeholder="Describe your collaboration idea, research proposal, or inquiry..."></textarea>
-                        </div>
-
-                        <div class="flex items-center gap-2">
-                            <input type="checkbox" id="newsletter" class="accent-indigo-500">
-                            <label for="newsletter" class="text-sm text-gray-400">Subscribe to my research newsletter (quarterly updates)</label>
-                        </div>
-
-                        <button type="submit" class="w-full py-4 bg-indigo-600 hover:bg-indigo-700 rounded-xl font-medium transition-all flex items-center justify-center gap-2 group">
-                            <span>Send Collaboration Request</span>
-                            <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
-                        </button>
-
-                        <p class="text-xs text-gray-500 text-center">
-                            <i class="fas fa-lock mr-1"></i>
-                            Your information is secure. I typically respond within 48 hours.
-                        </p>
-                    </form>
-
-                    <!-- Success Message (Hidden by default) -->
-                    <div id="formSuccess" class="hidden text-center py-12">
-                        <div class="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-check text-3xl text-green-400"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-2">Request Sent!</h3>
-                        <p class="text-gray-400 mb-6">Thank you for your interest. I'll review your proposal and get back to you soon.</p>
-                        <button onclick="resetForm()" class="px-6 py-3 rounded-full glass hover:bg-white/5 transition-colors">Send Another</button>
+        <div class="glass rounded-3xl p-8 md:p-12">
+            <form id="collabForm" onsubmit="sendEmail(event)" class="space-y-6">
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-2">Your Name *</label>
+                        <input type="text" name="from_name" id="from_name" required class="form-input" placeholder="Dr. ABU Talha">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-2">Your Email *</label>
+                        <input type="email" name="from_email" id="from_email" required class="form-input" placeholder="talha@university.edu">
                     </div>
                 </div>
-            </div>
-        </section>
 
+                <div>
+                    <label class="block text-sm text-gray-400 mb-2">Institution/Organization</label>
+                    <input type="text" name="organization" id="organization" class="form-input" placeholder="University of Research">
+                </div>
+
+                <div>
+                    <label class="block text-sm text-gray-400 mb-2">Collaboration Type *</label>
+                    <select name="collaboration_type" id="collaboration_type" class="form-input" required>
+                        <option value="">Select type...</option>
+                        <option value="Research">Research</option>
+                        <option value="Consulting">Consulting</option>
+                        <option value="PhD Supervision">PhD Supervision</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm text-gray-400 mb-2">Research Area of Interest</label>
+                    <select name="research_area" id="research_area" class="form-input">
+                        <option value="">Select an area...</option>
+                        <option value="Neuropsychiatric AI">Neuropsychiatric AI</option>
+                        <option value="ICU Delirium Prediction">ICU Delirium Prediction</option>
+                        <option value="Medical Imaging (CNN)">Medical Imaging (CNN)</option>
+                        <option value="Movement Analysis / EyesWeb">Movement Analysis / EyesWeb</option>
+                        <option value="Affective Computing">Affective Computing</option>
+                        <option value="Blockchain in Healthcare">Blockchain in Healthcare</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm text-gray-400 mb-2">Your Proposal *</label>
+                    <textarea name="message" id="message" rows="5" required class="form-input resize-none" placeholder="Describe your collaboration idea, research proposal, or inquiry..."></textarea>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" name="newsletter" id="newsletter" value="Yes" class="accent-indigo-500">
+                    <label for="newsletter" class="text-sm text-gray-400">Subscribe to my research newsletter (quarterly updates)</label>
+                </div>
+
+                <button type="submit" id="submitBtn" class="w-full py-4 bg-indigo-600 hover:bg-indigo-700 rounded-xl font-medium transition-all flex items-center justify-center gap-2 group">
+                    <span>Send Collaboration Request</span>
+                    <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
+                </button>
+
+                <p class="text-xs text-gray-500 text-center">
+                    <i class="fas fa-lock mr-1"></i>
+                    Your information is secure. I typically respond within 48 hours.
+                </p>
+            </form>
+
+            <!-- Success Message (Hidden by default) -->
+            <div id="formSuccess" class="hidden text-center py-12">
+                <div class="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check text-3xl text-green-400"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Request Sent!</h3>
+                <p class="text-gray-400 mb-6">Thank you for your interest. I'll review your proposal and get back to you soon.</p>
+                <button onclick="resetForm()" class="px-6 py-3 rounded-full glass hover:bg-white/5 transition-colors">Send Another</button>
+            </div>
+        </div>
+    </div>
+</section>
         <!-- References -->
         <section id="recommendations" class="py-32 bg-secondary/30">
             <div class="max-w-7xl mx-auto px-6">
@@ -1518,28 +1521,21 @@
         // Layouts
         function changeLayout(layout) {
             PortfolioState.layout = layout;
+
             const pubs = document.getElementById('publicationsGrid');
             const exp = document.getElementById('experienceGrid');
-            
-            if (layout === 'bento') {
-                pubs.className = 'bento-grid';
-                exp.className = 'bento-grid';
-            } else if (layout === 'masonry') {
-                pubs.className = 'masonry-grid';
-            } else {
-                pubs.className = 'grid md:grid-cols-2 lg:grid-cols-3 gap-6';
-                exp.className = 'space-y-8';
-            }
 
-            document.querySelectorAll('.layout-btn').forEach(btn => {
-                if (btn.dataset.layout === layout) {
-                    btn.classList.add('bg-indigo-500/20', 'border-indigo-500');
-                    btn.classList.remove('bg-white/5', 'border-white/10');
-                } else {
-                    btn.classList.remove('bg-indigo-500/20', 'border-indigo-500');
-                    btn.classList.add('bg-white/5', 'border-white/10');
-                }
-            });
+            if (layout === 'bento') {
+                if (pubs) pubs.className = 'bento-grid';
+                if (exp) exp.className = 'bento-grid';
+            } 
+            else if (layout === 'masonry') {
+                if (pubs) pubs.className = 'masonry-grid';
+            } 
+            else {
+                if (pubs) pubs.className = 'grid md:grid-cols-2 lg:grid-cols-3 gap-6';
+                if (exp) exp.className = 'space-y-8';
+            }
         }
 
         // Content Editing
@@ -1551,16 +1547,19 @@
             if (field === 'bio') document.getElementById('displayBio').innerHTML = `<p>${value}</p>`;
         }
 
-        // Section Toggle
+        // Section Toggle - FIXED
         function toggleSection(id, show) {
             PortfolioState.sections[id] = show;
             const el = document.getElementById(id);
             if (el) {
                 if (show) {
-                    el.classList.remove('hidden-section');
-                    gsap.from(el, { opacity: 0, y: 30, duration: 0.6 });
+                    el.style.display = 'block';
+                    el.style.visibility = 'visible';
+                    el.style.opacity = '1';
+                    // Force redraw
+                    el.offsetHeight;
                 } else {
-                    el.classList.add('hidden-section');
+                    el.style.display = 'none';
                 }
             }
         }
@@ -1637,11 +1636,13 @@
             }
         }
 
-        // Publication Filter
+        // Publication Filter - FIXED
         function filterPubs(year) {
             document.querySelectorAll('.pub-item').forEach(item => {
                 if (year === 'all' || item.dataset.year === year) {
                     item.style.display = 'block';
+                    item.style.opacity = '1';
+                    item.style.visibility = 'visible';
                 } else {
                     item.style.display = 'none';
                 }
@@ -1825,36 +1826,56 @@
             alert('Portfolio link copied!');
         }
 
-        // Initialize
+        // CRITICAL FIX: Initialize immediately on load
         document.addEventListener('DOMContentLoaded', () => {
-            gsap.registerPlugin(ScrollTrigger);
+            // Ensure all sections are visible
+            ['experience', 'publications', 'hero', 'about', 'research-timeline', 'certificates', 'skills', 'collaboration', 'recommendations'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.style.opacity = '1';
+                    el.style.visibility = 'visible';
+                    el.style.display = 'block';
+                }
+            });
             
-            gsap.utils.toArray('section').forEach(section => {
-                gsap.from(section.querySelectorAll('h2, h3, p, .glass'), {
-                    y: 30,
-                    opacity: 0,
-                    duration: 0.8,
-                    stagger: 0.1,
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'top 80%',
-                        toggleActions: 'play none none reverse'
+            // Ensure all cards are visible
+            document.querySelectorAll('.experience-card, .pub-item').forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+                el.style.display = 'block';
+            });
+            
+            // Initialize GSAP if available
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+                
+                // Only animate if not already visible
+                gsap.utils.toArray('section').forEach(section => {
+                    if (section.style.opacity !== '1') {
+                        gsap.from(section, {
+                            opacity: 0,
+                            y: 30,
+                            duration: 0.8,
+                            scrollTrigger: {
+                                trigger: section,
+                                start: 'top 80%',
+                                once: true
+                            }
+                        });
                     }
                 });
-            });
+            }
+        });
 
-            // Magnetic buttons
-            document.querySelectorAll('.magnetic-btn').forEach(btn => {
-                btn.addEventListener('mousemove', (e) => {
-                    const rect = btn.getBoundingClientRect();
-                    const x = e.clientX - rect.left - rect.width / 2;
-                    const y = e.clientY - rect.top - rect.height / 2;
-                    btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+        // Backup visibility check
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelectorAll('#experience, #publications').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.visibility = 'visible';
+                    el.style.display = 'block';
                 });
-                btn.addEventListener('mouseleave', () => {
-                    btn.style.transform = 'translate(0, 0)';
-                });
-            });
+            }, 100);
         });
 
         // Smooth scroll for anchors
@@ -1865,6 +1886,35 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
+      // EmailJS Send Function
+function sendEmail(e) {
+    e.preventDefault();
+    
+    const btn = document.getElementById('submitBtn');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+    btn.disabled = true;
+    
+    emailjs.sendForm('service_c94wba5', 'template_5ajn4l4', '#collabForm')
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            document.getElementById('collabForm').style.display = 'none';
+            document.getElementById('formSuccess').classList.remove('hidden');
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert('Failed to send. Please email directly at niloyhasanfoysal440@gmail.com');
+            btn.innerHTML = '<span>Send Collaboration Request</span><i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>';
+            btn.disabled = false;
+        });
+}
+
+function resetForm() {
+    document.getElementById('collabForm').reset();
+    document.getElementById('collabForm').style.display = 'block';
+    document.getElementById('formSuccess').classList.add('hidden');
+    const btn = document.getElementById('submitBtn');
+    btn.innerHTML = '<span>Send Collaboration Request</span><i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>';
+    btn.disabled = false;
+}
     </script>
 </body>
 </html>
