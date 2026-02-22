@@ -1014,6 +1014,53 @@
                             <li><i class="fas fa-check text-pink-500 mr-2"></i>Managed agile development with changing requirements in healthcare domain</li>
                         </ul>
                     </div>
+                    <!-- WASDI Experience - NEW -->
+<div class="experience-card glass rounded-3xl p-8 hover-lift" style="opacity: 1; transform: none;">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+        <div>
+            <h3 class="text-2xl font-bold">Software Engineer</h3>
+            <p class="text-blue-400 font-medium"><i class="fas fa-code mr-2"></i>WASDI</p>
+            <p class="text-gray-500 text-sm"><i class="fas fa-map-marker-alt mr-2"></i>Genova, Italy | 01/03/2023 – 10/10/2023</p>
+        </div>
+        <span class="px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-sm border border-blue-500/20 mt-4 md:mt-0">
+            <i class="fas fa-laptop-code mr-2"></i>Software Development
+        </span>
+    </div>
+    <div class="text-gray-400 text-sm space-y-3">
+        <p>At WASDI Company, I recognized that efficient, high-quality document generation is essential for streamlining operations and reinforcing a professional brand image. To achieve this, we proposed the integration of the <strong>FPDF (Free PDF Generation Library)</strong> into our projects.</p>
+        <p>This powerful, lightweight tool enables the creation of fully customized, standards-compliant PDF documents, ensuring accuracy, consistency, and adaptability to evolving user requirements. By embedding FPDF into our workflow, we aimed to enhance productivity, reduce manual effort, and deliver a superior document creation experience.</p>
+    </div>
+    <div class="mt-4 flex gap-2">
+        <span class="px-3 py-1 rounded-full bg-white/5 text-xs border border-white/10">FPDF</span>
+        <span class="px-3 py-1 rounded-full bg-white/5 text-xs border border-white/10">PDF Generation</span>
+        <span class="px-3 py-1 rounded-full bg-white/5 text-xs border border-white/10">PHP</span>
+        <span class="px-3 py-1 rounded-full bg-white/5 text-xs border border-white/10">Document Automation</span>
+    </div>
+</div>
+
+<!-- Qianfeng Internship - NEW -->
+<div class="experience-card glass rounded-3xl p-8 hover-lift" style="opacity: 1; transform: none;">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+        <div>
+            <h3 class="text-2xl font-bold">Intern</h3>
+            <p class="text-red-400 font-medium"><i class="fas fa-globe-asia mr-2"></i>Qianfeng Interconnection Technology Co., Ltd</p>
+            <p class="text-gray-500 text-sm"><i class="fas fa-map-marker-alt mr-2"></i>Nanchang, China | 01/06/2021 – 30/09/2021</p>
+        </div>
+        <span class="px-4 py-2 rounded-full bg-red-500/10 text-red-400 text-sm border border-red-500/20 mt-4 md:mt-0">
+            <i class="fas fa-user-graduate mr-2"></i>Internship
+        </span>
+    </div>
+    <div class="text-gray-400 text-sm space-y-3">
+        <p>At Qianfeng Interconnection Technology Co., Ltd., China, I contributed to the <strong>design and development</strong> of a tailored enterprise software solution for a <strong>university student management system</strong>.</p>
+        <p>The platform automated key processes such as <strong>data collection</strong>, improving operational efficiency and reducing manual administrative workload for the educational institution.</p>
+    </div>
+    <div class="mt-4 flex gap-2">
+        <span class="px-3 py-1 rounded-full bg-white/5 text-xs border border-white/10">Enterprise Software</span>
+        <span class="px-3 py-1 rounded-full bg-white/5 text-xs border border-white/10">Student Management System</span>
+        <span class="px-3 py-1 rounded-full bg-white/5 text-xs border border-white/10">Data Automation</span>
+        <span class="px-3 py-1 rounded-full bg-white/5 text-xs border border-white/10">China</span>
+    </div>
+</div>
                 </div>
             </div>
         </section>
@@ -1188,15 +1235,6 @@
                                 <p class="text-white font-bold text-sm">HSK Chinese Language</p>
                                 <p class="text-gray-300 text-xs">Level 4 • 2021</p>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Add New Placeholder -->
-                    <div class="cert-card glass rounded-xl overflow-hidden border-2 border-dashed border-indigo-500/30 flex items-center justify-center cursor-pointer hover:border-indigo-500 hover:bg-indigo-500/5 transition-all" onclick="document.getElementById('certUpload').click()">
-                        <input type="file" id="certUpload" class="hidden" accept="image/*" onchange="addCertificate(this)">
-                        <div class="text-center p-4">
-                            <i class="fas fa-plus text-3xl text-indigo-400 mb-2"></i>
-                            <p class="text-xs text-gray-400">Add Certificate</p>
                         </div>
                     </div>
                 </div>
@@ -1612,28 +1650,6 @@
                     btn.classList.remove('bg-indigo-500/20', 'text-indigo-400');
                 }
             });
-        }
-
-        function addCertificate(input) {
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    const div = document.createElement('div');
-                    div.className = 'cert-card glass rounded-xl overflow-hidden cert-item cursor-pointer';
-                    div.onclick = () => openLightbox(e.target.result);
-                    div.innerHTML = `
-                        <img src="${e.target.result}" class="w-full h-full object-cover">
-                        <div class="cert-overlay">
-                            <div>
-                                <p class="text-white font-bold text-sm">New Certificate</p>
-                                <p class="text-gray-300 text-xs">Just Added</p>
-                            </div>
-                        </div>
-                    `;
-                    document.getElementById('certGrid').insertBefore(div, document.getElementById('certGrid').lastElementChild);
-                };
-                reader.readAsDataURL(input.files[0]);
-            }
         }
 
         // Publication Filter - FIXED
